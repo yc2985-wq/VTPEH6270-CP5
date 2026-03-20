@@ -28,43 +28,47 @@ summary(data)
 # Count missing values in each column
 colSums(is.na(data))
 
-# =========================
+# ============================
 # 5. Select key variables
-# =========================
-# Example variable names – adjust if your dataset uses different names
+# ============================
+
+# Use actual BRFSS variable names
 data_clean <- data %>%
-  select(smoking_status, diabetes) %>%
+  select(X_SMOKER3, DIABETE3) %>%
   drop_na()
 
-# =========================
+# ============================
 # 6. Descriptive statistics
-# =========================
+# ============================
+
 # Frequency tables
-table(data_clean$smoking_status)
-table(data_clean$diabetes)
+table(data_clean$X_SMOKER3)
+table(data_clean$DIABETE3)
 
 # Cross-tabulation
-table(data_clean$smoking_status, data_clean$diabetes)
+table(data_clean$X_SMOKER3, data_clean$DIABETE3)
 
-# Proportions
-prop.table(table(data_clean$smoking_status, data_clean$diabetes), 1)
+# Proportions (row-wise)
+prop.table(table(data_clean$X_SMOKER3, data_clean$DIABETE3), 1)
 
-# =========================
+# ============================
 # 7. Visualization
-# =========================
-# Bar plot of diabetes by smoking status
-ggplot(data_clean, aes(x = smoking_status, fill = diabetes)) +
+# ============================
+
+ggplot(data_clean, aes(x = X_SMOKER3, fill = DIABETE3)) +
   geom_bar(position = "fill") +
   labs(
     title = "Diabetes Prevalence by Smoking Status",
-    x = "Smoking Status",
+    x = "Smoking Status (X_SMOKER3)",
     y = "Proportion"
   ) +
   theme_minimal()
 
-# =========================
+# ============================
 # 8. Interpretation (optional note)
-# =========================
+# ============================
+
 # Preliminary observation:
 # The proportion of diabetes appears higher among certain smoking groups,
 # suggesting a potential association worth further investigation.
+
