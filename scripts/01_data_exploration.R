@@ -14,7 +14,7 @@ library(tidyverse)
 # 2. Load dataset
 # =========================
 # NOTE: Update file name if needed
-data <- read.csv("data/brfss_2023.csv")
+brfss <- read.csv("data/brfss_small.csv")
 
 # =========================
 # 3. Inspect dataset
@@ -32,34 +32,30 @@ colSums(is.na(data))
 # 5. Select key variables
 # ============================
 
-# Use actual BRFSS variable names
 data_clean <- data %>%
-  select(X_SMOKER3, DIABETE3) %>%
+  select(X_SMOKER3, DIABETE4) %>%
   drop_na()
 
 # ============================
 # 6. Descriptive statistics
 # ============================
 
-# Frequency tables
 table(data_clean$X_SMOKER3)
-table(data_clean$DIABETE3)
+table(data_clean$DIABETE4)
 
-# Cross-tabulation
-table(data_clean$X_SMOKER3, data_clean$DIABETE3)
+table(data_clean$X_SMOKER3, data_clean$DIABETE4)
 
-# Proportions (row-wise)
-prop.table(table(data_clean$X_SMOKER3, data_clean$DIABETE3), 1)
+prop.table(table(data_clean$X_SMOKER3, data_clean$DIABETE4), 1)
 
 # ============================
 # 7. Visualization
 # ============================
 
-ggplot(data_clean, aes(x = X_SMOKER3, fill = DIABETE3)) +
+ggplot(data_clean, aes(x = X_SMOKER3, fill = DIABETE4)) +
   geom_bar(position = "fill") +
   labs(
     title = "Diabetes Prevalence by Smoking Status",
-    x = "Smoking Status (X_SMOKER3)",
+    x = "Smoking Status",
     y = "Proportion"
   ) +
   theme_minimal()
