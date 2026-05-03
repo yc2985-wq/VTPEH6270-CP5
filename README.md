@@ -74,6 +74,17 @@ All analyses can be reproduced by running the scripts in the `scripts/` folder. 
 
 Note: The original dataset was large and was processed into a smaller subset for analysis. 
 In the scripts, the dataset name changes from "brfss" to "data" to reflect this cleaned and reduced dataset used for downstream analysis.
+
+## Execution Steps
+
+To fully reproduce the analysis:
+
+1. Load the dataset from the `data/` folder.
+2. Run the script in the `scripts/` folder (e.g., `01_data_exploration.R`).
+3. The script will clean the data and generate summary outputs.
+4. Output tables and figures can be saved or exported to the `output/` folder.
+Note: The original dataset was large and was processed into a smaller subset for analysis. 
+In the scripts, the dataset name changes from "brfss" to "data" to reflect this cleaned and reduced dataset used for downstream analysis.
 ---
 
 ## AI Tool Disclosure
