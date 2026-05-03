@@ -15,7 +15,10 @@ library(tidyverse)
 # =========================
 # NOTE: Update file name if needed
 brfss <- read.csv("data/brfss_small.csv")
-
+# NOTE:
+# The original dataset (brfss) was large and could not be uploaded directly to GitHub.
+# A cleaned and reduced subset was created and stored as 'data' for analysis.
+# This explains the change in dataset name from 'brfss' to 'data'.
 # =========================
 # 3. Inspect dataset
 # =========================
