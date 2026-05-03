@@ -72,6 +72,8 @@ All analyses can be reproduced by running the scripts in the `scripts/` folder. 
 - dplyr  
 - ggplot2  
 
+Note: The original dataset was large and was processed into a smaller subset for analysis. 
+In the scripts, the dataset name changes from "brfss" to "data" to reflect this cleaned and reduced dataset used for downstream analysis.
 ---
 
 ## AI Tool Disclosure
