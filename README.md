@@ -71,7 +71,7 @@ Descriptive results show a slightly higher prevalence of diabetes among current 
 
 ## Shiny App
 
-https://nkk101.shinyapps.io/brfss_smoking_diabetes/ 
+https://nkk101.shinyapps.io/brfss_smoking_diabetes/
 
 ---
 
